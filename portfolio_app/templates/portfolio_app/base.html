@@ -19,14 +19,12 @@
             <span class="brand-mark">AM</span>
             <span>Your Name</span>
           </a>
-          <!-- EDIT THIS: change the text above to your name or initials -->
 
           <nav class="site-nav" aria-label="Main navigation">
             <a href="{% url 'home' %}" class="nav-link {% if page_title == 'Home' %}active{% endif %}">Overview</a>
             <a href="{% url 'profile' %}" class="nav-link {% if page_title == 'Profile' %}active{% endif %}">Profile</a>
             <a href="{% url 'skills' %}" class="nav-link {% if page_title == 'Skills' %}active{% endif %}">Skills</a>
             <a href="{% url 'projects' %}" class="nav-link {% if page_title == 'Projects' %}active{% endif %}">Projects</a>
-            <a href="{% url 'learning' %}" class="nav-link {% if page_title == 'Learning' %}active{% endif %}">Learning</a>
           </nav>
         </div>
       </header>
@@ -38,14 +36,10 @@
       <footer class="site-footer">
         <div class="container footer-inner">
           <p>© 2026 Your Name</p>
-          <!-- EDIT THIS: replace the year and name in the footer -->
           <div class="footer-links">
             <a href="mailto:you@example.com">you@example.com</a>
-            <!-- EDIT THIS: replace with your actual email -->
             <a href="https://github.com" target="_blank" rel="noreferrer">GitHub</a>
-            <!-- EDIT THIS: replace with your real GitHub profile -->
             <a href="https://linkedin.com" target="_blank" rel="noreferrer">LinkedIn</a>
-            <!-- EDIT THIS: replace with your real LinkedIn profile -->
           </div>
         </div>
       </footer>
