@@ -1,0 +1,54 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="description" content="Personal portfolio and project showcase built with Django." />
+    <title>{% block title %}Alex Morgan | Portfolio{% endblock %}</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
+    <link rel="stylesheet" href="{% static 'portfolio_app/css/styles.css' %}" />
+  </head>
+  <body>
+    <div class="page-shell">
+      <header class="site-header">
+        <div class="container nav-wrap">
+          <a href="{% url 'home' %}" class="brand" aria-label="Go to homepage">
+            <span class="brand-mark">AM</span>
+            <span>Your Name</span>
+          </a>
+          <!-- EDIT THIS: change the text above to your name or initials -->
+
+          <nav class="site-nav" aria-label="Main navigation">
+            <a href="{% url 'home' %}" class="nav-link {% if page_title == 'Home' %}active{% endif %}">Overview</a>
+            <a href="{% url 'profile' %}" class="nav-link {% if page_title == 'Profile' %}active{% endif %}">Profile</a>
+            <a href="{% url 'skills' %}" class="nav-link {% if page_title == 'Skills' %}active{% endif %}">Skills</a>
+            <a href="{% url 'projects' %}" class="nav-link {% if page_title == 'Projects' %}active{% endif %}">Projects</a>
+            <a href="{% url 'learning' %}" class="nav-link {% if page_title == 'Learning' %}active{% endif %}">Learning</a>
+          </nav>
+        </div>
+      </header>
+
+      <main>
+        {% block content %}{% endblock %}
+      </main>
+
+      <footer class="site-footer">
+        <div class="container footer-inner">
+          <p>© 2026 Your Name</p>
+          <!-- EDIT THIS: replace the year and name in the footer -->
+          <div class="footer-links">
+            <a href="mailto:you@example.com">you@example.com</a>
+            <!-- EDIT THIS: replace with your actual email -->
+            <a href="https://github.com" target="_blank" rel="noreferrer">GitHub</a>
+            <!-- EDIT THIS: replace with your real GitHub profile -->
+            <a href="https://linkedin.com" target="_blank" rel="noreferrer">LinkedIn</a>
+            <!-- EDIT THIS: replace with your real LinkedIn profile -->
+          </div>
+        </div>
+      </footer>
+    </div>
+  </body>
+</html>

@@ -1,0 +1,37 @@
+{% extends 'portfolio_app/base.html' %}
+
+{% block title %}Learning | Your Name{% endblock %}
+
+{% block content %}
+<section class="page-hero">
+  <div class="container narrow">
+    <p class="eyebrow">Learning</p>
+    <h1>How I build.</h1>
+    <p class="lead accent">A simple view of the building blocks behind this project.</p>
+  </div>
+</section>
+
+<section class="content-section">
+  <div class="container card-grid skill-grid">
+    {% for concept in concepts %}
+    <article class="info-card skill-card">
+      <h3>{{ concept.title }}</h3>
+      <p>{{ concept.description }}</p>
+    </article>
+    {% endfor %}
+  </div>
+</section>
+
+<section class="content-section">
+  <div class="container narrow">
+    <div class="detail-panel">
+      <h3>Beginner checklist</h3>
+      <ul class="check-list">
+        {% for step in checklist %}
+        <li>{{ step }}</li>
+        {% endfor %}
+      </ul>
+    </div>
+  </div>
+</section>
+{% endblock %}

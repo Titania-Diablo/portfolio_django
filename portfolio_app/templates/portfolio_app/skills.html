@@ -1,0 +1,28 @@
+{% extends 'portfolio_app/base.html' %}
+
+{% block title %}Skills | Your Name{% endblock %}
+
+{% block content %}
+<section class="page-hero">
+  <div class="container narrow">
+    <p class="eyebrow">Skills</p>
+    <h1>Focused on product-ready engineering.</h1>
+  </div>
+</section>
+
+<section class="content-section">
+  <div class="container card-grid skill-grid">
+    {% for group in skill_groups %}
+    <article class="info-card skill-card">
+      <h3>{{ group.name }}</h3>
+      <p>{{ group.description }}</p>
+      <ul class="tag-list">
+        {% for item in group.items %}
+        <li>{{ item }}</li>
+        {% endfor %}
+      </ul>
+    </article>
+    {% endfor %}
+  </div>
+</section>
+{% endblock %}

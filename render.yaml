@@ -1,0 +1,14 @@
+services:
+  - type: web
+    name: portfolio-django
+    env: python
+    plan: free
+    buildCommand: ./build.sh
+    startCommand: gunicorn portfolio_site.wsgi:application
+    envVars:
+      - key: PYTHON_VERSION
+        value: "3.12.4"
+      - key: DEBUG
+        value: "False"
+      - key: SECRET_KEY
+        generateValue: true

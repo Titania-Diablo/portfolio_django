@@ -1,0 +1,29 @@
+{% extends 'portfolio_app/base.html' %}
+
+{% block title %}Projects | Your Name{% endblock %}
+
+{% block content %}
+<section class="page-hero">
+  <div class="container narrow">
+    <p class="eyebrow">Projects</p>
+    <h1>Systems that solve real operating problems.</h1>
+  </div>
+</section>
+
+<section class="content-section">
+  <div class="container project-list">
+    {% for project in projects %}
+    <article class="project-row">
+      <div>
+        <span class="project-tag">{{ project.category }}</span>
+        <h3>{{ project.title }}</h3>
+      </div>
+      <p>{{ project.summary }}</p>
+      <div class="tech-list">
+        <span>{{ project.technologies }}</span>
+      </div>
+    </article>
+    {% endfor %}
+  </div>
+</section>
+{% endblock %}

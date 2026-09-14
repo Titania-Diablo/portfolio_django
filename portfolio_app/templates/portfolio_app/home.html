@@ -1,0 +1,71 @@
+{% extends 'portfolio_app/base.html' %}
+
+{% block title %}Overview | Your Name{% endblock %}
+
+{% block content %}
+<section class="hero-section">
+  <div class="container hero-grid">
+    <div class="hero-copy">
+      <p class="eyebrow">Software engineer • builder • problem solver</p>
+      <h1>I build thoughtful digital experiences that feel clear and useful.</h1>
+      <p class="lead">
+        I enjoy turning ideas into simple, practical products and polished experiences that people can use with ease.
+      </p>
+      <div class="cta-group">
+        <a href="{% url 'projects' %}" class="button primary">View projects</a>
+        <a href="{% url 'profile' %}" class="button secondary">Learn more</a>
+      </div>
+      <ul class="mini-stats" aria-label="Key statistics">
+        {% for stat in stats %}
+        <li>
+          <strong>{{ stat.value }}</strong>
+          <span>{{ stat.label }}</span>
+        </li>
+        {% endfor %}
+      </ul>
+    </div>
+
+    <div class="hero-card">
+      <div class="card-topbar">
+        <span class="dot red"></span>
+        <span class="dot amber"></span>
+        <span class="dot green"></span>
+      </div>
+      <div class="snippet-window">
+        <div class="snippet-header">
+          <span>portfolio.py</span>
+          <span class="badge">active</span>
+        </div>
+        <pre><code>def build_team_impact():
+    strategy = "clarity + execution"
+    user_focus = product_feedback
+    systems = scalable_architecture
+    return ship_with_confidence()</code></pre>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="feature-section">
+  <div class="container">
+    <div class="section-heading">
+      <p class="eyebrow">Featured work</p>
+      <h2>Selected projects and product systems.</h2>
+    </div>
+
+    <div class="card-grid">
+      {% for project in featured_projects %}
+      <article class="info-card">
+        <span class="project-tag">{{ project.category }}</span>
+        <h3>{{ project.title }}</h3>
+        <p>{{ project.summary }}</p>
+        <div class="tech-list">
+          <span>{{ project.technologies }}</span>
+        </div>
+        <a href="{{ project.link }}" target="_blank" rel="noreferrer">Case study →</a>
+      </article>
+      {% endfor %}
+    </div>
+  </div>
+</section>
+{% endblock %}

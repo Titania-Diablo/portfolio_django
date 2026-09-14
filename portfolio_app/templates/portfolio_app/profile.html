@@ -1,0 +1,32 @@
+{% extends 'portfolio_app/base.html' %}
+
+{% block title %}Profile | Your Name{% endblock %}
+
+{% block content %}
+<section class="page-hero">
+  <div class="container narrow">
+    <p class="eyebrow">Profile</p>
+    <h1>{{ profile.name }}</h1>
+    <p class="lead accent">{{ profile.role }}</p>
+    <p class="meta-line">{{ profile.location }}</p>
+  </div>
+</section>
+
+<section class="content-section">
+  <div class="container split-layout">
+    <div>
+      <h2>About</h2>
+      <p>{{ profile.summary }}</p>
+    </div>
+
+    <aside class="detail-panel">
+      <h3>What I bring</h3>
+      <ul class="check-list">
+        {% for highlight in profile.highlights %}
+        <li>{{ highlight }}</li>
+        {% endfor %}
+      </ul>
+    </aside>
+  </div>
+</section>
+{% endblock %}
