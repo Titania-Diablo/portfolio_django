@@ -45,7 +45,7 @@ def home(request):
 def profile(request):
     """Render the profile page that summarizes the person behind the portfolio."""
     profile_data = {
-        "name": "Your Name",
+        "name": "Troy Thai",
         "role": "Developer • Builder • Problem Solver",
         "location": "Available for new opportunities",
         "summary": (
