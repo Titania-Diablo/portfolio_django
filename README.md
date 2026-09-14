@@ -1,13 +1,21 @@
-# Portfolio Django App
+# Troy Thai | Portfolio
 
-A responsive multi-page personal portfolio built with Django, WhiteNoise, and Gunicorn for deployment on Render.
+A personal portfolio website built with Django to showcase my background, skills, and project work in a clean, professional format.
+
+## About this project
+
+This project is a simple but polished portfolio site designed to present who I am, what I can do, and the work I have built. It includes sections for an overview, profile, skills, and projects, making it easy to share my experience and connect with opportunities.
+
+The site is built with Python and Django, and it is structured so it can be customized with personal content, links, and project details over time.
 
 ## Features
 
-- Overview landing page with featured content snippets
-- Dedicated profile, skills, and projects pages
-- Responsive dark-mode design
-- Clean, production-ready Django configuration for deployment
+- Responsive portfolio layout
+- Overview landing page
+- Profile and background section
+- Skills showcase
+- Projects section
+- Clean Django template structure for easy customization
 
 ## Local setup
 
@@ -20,22 +28,13 @@ python manage.py migrate
 python manage.py runserver
 ```
 
-Open http://127.0.0.1:8000
+Then open:
 
-## Deployment on Render
+```text
+http://127.0.0.1:8000/
+```
 
-1. Push this code to a GitHub repository.
-2. Create a new Web Service on Render.
-3. Connect the repository.
-4. Use the following settings:
-   - Build command: `./build.sh`
-   - Start command: `gunicorn portfolio_site.wsgi:application`
-5. Add environment variables:
-   - `DEBUG=False`
-   - `SECRET_KEY=<strong-random-value>`
-6. Deploy the service.
-
-## Structure
+## Project structure
 
 ```text
 portfolio_django/
@@ -49,3 +48,12 @@ portfolio_django/
 ├── templates/
 └── staticfiles/
 ```
+
+## Deployment
+
+This project is ready to be deployed to services like Render using the included build configuration.
+
+## Contact
+
+- Email: tri.t.thai404@gmail.com
+- GitHub: https://github.com/Titania-Diablo
